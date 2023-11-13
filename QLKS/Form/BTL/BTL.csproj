@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B840800-7081-4909-9212-1DC59D0E5992}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BTL</RootNamespace>
+    <AssemblyName>BTL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1497618989-3_85123.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CRVsPackageLib, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CRVsPackageLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.TemplateEngine.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Data.AdoDotNetInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Enterprise.Viewing.ReportSource.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.ClientDoc.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.CommLayer.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.CommonControls.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.Controllers.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.CubeDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.DataSetConversion.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.ObjectFactory.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Prompting, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.Prompting.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.ReportDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.XmlSerialize, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.XmlSerialize.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.VSDesigner, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.VSDesigner.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\FlashControlV71.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>C:\Users\E7270\Downloads\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net461\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="SAPBusinessObjects.WPF.Viewer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\SAPBusinessObjects.WPF.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\SAPBusinessObjects.WPF.ViewerShared.dll</HintPath>
+    </Reference>
+    <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\ShockwaveFlashObjects.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xceed.Document.NET, Version=3.0.23523.12090, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xceed.Document.NET.3.0.23523.1209\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Pdf, Version=3.0.23523.12090, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xceed.Pdf.3.0.23523.1209\lib\net40\Xceed.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=3.0.23523.12090, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xceed.Words.NET.3.0.23523.1209\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chitietphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chitietphong.Designer.cs">
+      <DependentUpon>Chitietphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="danhmuckhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="danhmuckhachhang.Designer.cs">
+      <DependentUpon>danhmuckhachhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdangnhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdangnhap.Designer.cs">
+      <DependentUpon>fdangnhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdmdv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdmdv.Designer.cs">
+      <DependentUpon>fdmdv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdmhddv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdmhddv.Designer.cs">
+      <DependentUpon>fdmhddv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdmhdphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdmhdphong.Designer.cs">
+      <DependentUpon>fdmhdphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdmkh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdmkh.Designer.cs">
+      <DependentUpon>fdmkh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdmphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdmphong.Designer.cs">
+      <DependentUpon>fdmphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdoimk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdoimk.Designer.cs">
+      <DependentUpon>fdoimk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="flocdata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flocdata.Designer.cs">
+      <DependentUpon>flocdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="flocdatachitietphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flocdatachitietphong.Designer.cs">
+      <DependentUpon>flocdatachitietphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="flocdatatonghopdv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flocdatatonghopdv.Designer.cs">
+      <DependentUpon>flocdatatonghopdv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="flocdatatonghopphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flocdatatonghopphong.Designer.cs">
+      <DependentUpon>flocdatatonghopphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmanhinhchinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmanhinhchinh.Designer.cs">
+      <DependentUpon>fmanhinhchinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fsudungdichvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fsudungdichvu.Designer.cs">
+      <DependentUpon>fsudungdichvu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fthongtinks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fthongtinks.Designer.cs">
+      <DependentUpon>fthongtinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fthuephong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fthuephong.Designer.cs">
+      <DependentUpon>fthuephong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ftimkiemphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ftimkiemphong.Designer.cs">
+      <DependentUpon>ftimkiemphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ftraphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ftraphong.Designer.cs">
+      <DependentUpon>ftraphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="flocdatadanhmucKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flocdatadanhmucKH.Designer.cs">
+      <DependentUpon>flocdatadanhmucKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ftimkiemphong1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ftimkiemphong1.Designer.cs">
+      <DependentUpon>ftimkiemphong1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLKSDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKSDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tonghopdmkhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tonghopdmkhachhang.Designer.cs">
+      <DependentUpon>tonghopdmkhachhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tonghopdichvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tonghopdichvu.Designer.cs">
+      <DependentUpon>tonghopdichvu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tonghopphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tonghopphong.Designer.cs">
+      <DependentUpon>tonghopphong.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Chitietphong.resx">
+      <DependentUpon>Chitietphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="danhmuckhachhang.resx">
+      <DependentUpon>danhmuckhachhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdangnhap.resx">
+      <DependentUpon>fdangnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdmdv.resx">
+      <DependentUpon>fdmdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdmhddv.resx">
+      <DependentUpon>fdmhddv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdmhdphong.resx">
+      <DependentUpon>fdmhdphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdmkh.resx">
+      <DependentUpon>fdmkh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdmphong.resx">
+      <DependentUpon>fdmphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdoimk.resx">
+      <DependentUpon>fdoimk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flocdata.resx">
+      <DependentUpon>flocdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flocdatachitietphong.resx">
+      <DependentUpon>flocdatachitietphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flocdatadanhmucKH.resx">
+      <DependentUpon>flocdatadanhmucKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flocdatatonghopdv.resx">
+      <DependentUpon>flocdatatonghopdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flocdatatonghopphong.resx">
+      <DependentUpon>flocdatatonghopphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmanhinhchinh.resx">
+      <DependentUpon>fmanhinhchinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fsudungdichvu.resx">
+      <DependentUpon>fsudungdichvu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fthongtinks.resx">
+      <DependentUpon>fthongtinks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fthuephong.resx">
+      <DependentUpon>fthuephong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ftimkiemphong.resx">
+      <DependentUpon>ftimkiemphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ftraphong.resx">
+      <DependentUpon>ftraphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ftimkiemphong1.resx">
+      <DependentUpon>ftimkiemphong1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tonghopdmkhachhang.resx">
+      <DependentUpon>tonghopdmkhachhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tonghopdichvu.resx">
+      <DependentUpon>tonghopdichvu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tonghopphong.resx">
+      <DependentUpon>tonghopphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QLKSDataSet1.xsc">
+      <DependentUpon>QLKSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLKSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLKSDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLKSDataSet1.xss">
+      <DependentUpon>QLKSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\iconfinder-3-avatar-2754579_120516.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-3-avatar-2754579_1205161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3592827-access-general-house-key-key-lock-key-login-office_107758.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keylock_icon_150156.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fitness_center_icon_150152.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2799201-jigsaw-processing_99781.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keylock_icon_1501561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_bed_icon_150167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2799208-bag-business_99786.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2799201-jigsaw-processing_997811.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2799204-management_99783.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2799204-management_997831.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3289557-clan-group-partners-peers-people_107100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-weather-lightning_98198.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking_hotel_icon_141823.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_set_of_house_clipart_icon_187233.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3289557-clan-group-partners-peers-people_1071001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-weather-lightning_981981.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking_hotel_icon_1418231.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wondicon-ui-free-logout_111256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba61.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba62.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba63.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba64.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3643745-human-man-people-person-profile_113435.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486485589-about-error-notification-help-info-information_81162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486485588-add-create-new-math-sign-cross-plus_81186.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vcsremoved_93492.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick_yes_approve_accept_green_icon-icons.com_55991.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flat-style-circle-save_icon-icons.com_66942.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomout_zoom_search_find_1530.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486485588-add-create-new-math-sign-cross-plus_811861.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486485588-add-create-new-math-sign-cross-plus_811862.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vcsremoved_934921.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flat-style-circle-save_icon-icons.com_669421.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick_yes_approve_accept_green_icon-icons.com_559911.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick_yes_approve_accept_green_icon-icons.com_559912.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\systemlogout_94057.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomout_zoom_search_find_15301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highlighter_green_15056.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-add_114467.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_37110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-delete_114438.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\organizer_calendar_pen_note_6134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Closeout_cierre_259.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomout_zoom_search_find_15302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomout_zoom_search_find_15303.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shoppaymentorderbuy-23_icon-icons.com_73884.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-color_money-coins_icon-icons.com_53446.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-check-4341282_120572.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_find_locate_1542.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_locate_find_6278.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_locate_find_62781.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_find_locate_15421.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note-task-comment-message-edit-write_108613.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3440901-box-carton-delivery-ecommerce-package-return-shipping_107530.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-home-4341294_120570.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\findtheuser_search_search_theuser_4518.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HelpIndex_locate_find_6213.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11_104884.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview_search_find_locate_1551.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-form_116472.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay_cash_bill_money_buy_icon_143287.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay_cash_payment_money_dollar_bill_icon_143267.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shoppaymentorderbuy-04_icon-icons.com_73886.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graphmagnifier_118081.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\market_research_analytics_chart_analysis_icon_161204.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics_118088.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel_43674.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking_hotel_icon_1418232.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel-Check-In_43673.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-lying-on-bed-inside-a-home_icon-icons.com_70419.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\findtheuser_search_search_theuser_45181.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HelpIndex_locate_find_62131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11_1048841.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\market_research_analytics_chart_analysis_icon_1612041.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics_1180881.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel_436741.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking_hotel_icon_1418233.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel-Check-In_436731.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-lying-on-bed-inside-a-home_icon-icons.com_704191.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics_1180882.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel_436742.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking_hotel_icon_1418234.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel-Check-In_436732.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-lying-on-bed-inside-a-home_icon-icons.com_704192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-delete_1144381.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fitness_center_icon_1501521.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flat-style-circle-save_icon-icons.com_669422.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highlighter_green_150561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_set_of_house_clipart_icon_1872331.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-3-avatar-2754579_1205162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-check-4341282_1205721.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-home-4341294_1205701.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keylock_icon_1501562.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightning-bolt-shadow_icon-icons.com_73510.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-color_money-coins_icon-icons.com_534461.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Closeout_cierre_2591.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-add_1144671.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engine_gear_internet_option_security_setting_web_icon_127066.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shoppaymentorderbuy-23_icon-icons.com_738841.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_bed_icon_1501671.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\systemlogout_940571.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vcsremoved_934922.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-weather-lightning_981982.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wondicon-ui-free-logout_1112561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomout_zoom_search_find_15304.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-home-4341294_1205702.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel_436743.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_house_icon-icons.com_49851.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486504328-bullet-list-menu-lines-points-items-options_81334.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking_hotel_icon_1418235.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-symbol-of-three-items-with-dots_icon-icons.com_72994.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-weather-lightning_981983.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bars-chart-ascending_icon-icons.com_56865.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\findtheuser_search_search_theuser_45182.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3643762-find-glass-magnifying-search-zoom_113420.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question-circular-button-1_icon-icons.com_69968.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba65.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba66.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient-blue-1556830182x42.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-lying-on-bed-inside-a-home_icon-icons.com_704193.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel-Check-In_436733.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\systemlogout_940572.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wondicon-ui-free-logout_1112562.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3289557-clan-group-partners-peers-people_1071002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient-blue-1556830182x421.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba67.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4544831-business-comerce-delivery-return-shop_121431.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-add_1144672.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_371101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32officeicons-3_89720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_delete_close_1075.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note-task-comment-message-edit-write_1086131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba68.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-socialive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-socialive1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient-blue-1556830182x422.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba69.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-endless-river.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba610.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient-black-green-linear-1920x1080-c2-000000-008080-a-90-f-14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\188514339_145859157600024_379318113328265145_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-endless-river1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba611.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1157ece472d4082becb8c9946f9399d7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba613.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba614.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba615.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba616.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba617.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba618.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5c01afda97f678cf801271eebb041ba619.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_keyboard_return_128_28490.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1497618989-3_85123.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

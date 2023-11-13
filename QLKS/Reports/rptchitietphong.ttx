@@ -1,0 +1,12 @@
+idhdp	Number		10
+string	String	20	Nguyen Quang Hai
+cmnd	String	20	030201004561
+idphong	String	10	P201
+songayo	Number		2
+tongtien	Number		550
+tienphong	Number		300
+tiendichvu	Number		200
+loaiphong	String	10	Thuong
+sogiuong	Number		2
+ngaybatdau	Date		05-06-2021
+ngayketthuc	Date		11-05-2021

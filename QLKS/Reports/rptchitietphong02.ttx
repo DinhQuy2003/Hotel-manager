@@ -1,0 +1,9 @@
+idhdp	Number		57
+hoten	String	100	Nguyen Quang Hai
+cmnd	String	20	030201007894
+idphong	String	10	P201
+ngayden	Date		31/05/2021
+ngaydi	Date		01/06/2021
+tongtien	Number		500
+loaiphong	String	10	Thuong
+sogiuong	Number		2
